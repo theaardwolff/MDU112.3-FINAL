@@ -1,0 +1,17 @@
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/aardwolff/MDUII2.3 FINAL/obj/Debug/Assembly-CSharp.dll
+/Users/aardwolff/MDUII2.3 FINAL/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/UnityEngine.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/UnityEditor.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Mono.Cecil.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Unity.DataContract.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/aardwolff/MDUII2.3 FINAL/Temp/bin/Debug/Mono.Cecil.Mdb.dll
