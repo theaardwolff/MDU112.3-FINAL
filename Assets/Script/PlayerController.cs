@@ -12,48 +12,53 @@ public class PlayerController : MonoBehaviour {
 	public float cameraSpeedX = 2.0f;
 	public float cameraSpeedY = 2.0f;
 
-	public Rigidbody rb;
+	public Rigidbody PlayerRb;
+	public Rigidbody ProjectileRb;
+
 	public Vector3 teleportPoint;
 
-	public GameObject projectile;
+	public GameObject projectilePrefab;
 
 	public GameObject[] muzzles;
 
-	public float projectileOffset = 2f;
-	public float projectileSpeed = 1000f;
+	public float projectileOffset = 6f;
+	public float projectileSpeed = 2000f;
 
 	// Use this for initialization
 	void Start () {
 
-		rb = GetComponent<Rigidbody>();
+		PlayerRb = GetComponent<Rigidbody>();
 
 	}
 
 	//Shoot Projectiles
-	void Shoot(){
+	/*void Shoot(){
 		for (int ind = 0; ind < muzzles.Length; ++ind) {
-			Instantiate (projectile, muzzles [ind].transform.position, muzzles [ind].transform.rotation);
+			Instantiate (projectilePrefab, muzzles [ind].transform.position, muzzles [ind].transform.rotation);
 		}
 	
-	}
+	}*/
+
 	void Update () {
 		rotateSpeedX += cameraSpeedX * Input.GetAxis ("Mouse X");
 		rotateSpeedY -= cameraSpeedY * Input.GetAxis ("Mouse Y");
 
 		transform.eulerAngles = new Vector3 (rotateSpeedY, rotateSpeedX, 0.0f);
 
+		// If the shoot button is pressed down...
 		if (Input.GetKeyDown (KeyCode.Space)) {
+
 			// Create the projectile.
-			GameObject projectileInstance = GameObject.Instantiate (projectile);
+			GameObject projectileInstance = GameObject.Instantiate (projectilePrefab);
 
 			// position the projectile slightly below the player.
 			projectileInstance.transform.position = transform.position - transform.up * projectileOffset;
 
 			// retrieve the projectile's rigid body
-			Rigidbody projectileRB = projectileInstance.GetComponent<Rigidbody> ();
+			Rigidbody ProjectileRB = projectileInstance.GetComponent<Rigidbody> ();
 
 			// launch the projectile
-			projectileRB.AddForce (transform.forward * projectileSpeed);
+			ProjectileRB.AddForce (transform.position - transform.forward * projectileSpeed * Time.deltaTime);
 
 			// play the sound
 			//*SoundManager.Instance.OnFireProjectile ();*
@@ -64,12 +69,14 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 
 		// Movement - Forward and Back
-
-		if (Input.GetKey ("s"))
-			rb.MovePosition (transform.position + transform.up * moveSpeedForward * Time.deltaTime);
-
+		if (Input.GetKey (KeyCode.LeftShift) & Input.GetKey ("w"))
+			PlayerRb.MovePosition (transform.position - transform.up * (moveSpeedBack * 2) * Time.deltaTime);
+		
 		else if (Input.GetKey ("w"))
-			rb.MovePosition (transform.position - transform.up * moveSpeedBack * Time.deltaTime);
+			PlayerRb.MovePosition (transform.position - transform.up * moveSpeedBack * Time.deltaTime);
+		
+		if (Input.GetKey ("s"))
+			PlayerRb.MovePosition (transform.position + transform.up * moveSpeedForward * Time.deltaTime);
 
 		else
 			return;
