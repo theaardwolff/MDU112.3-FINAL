@@ -16,7 +16,7 @@ public class EnemyBase : MonoBehaviour {
 
 	// Use this for initialization
 	protected virtual void Start () {
-		GameManager.Instance.RegisterEnemy();
+		GameController.Instance.RegisterEnemy();
 	}
 
 	// Update is called once per frame
@@ -36,7 +36,7 @@ public class EnemyBase : MonoBehaviour {
 		// destroy the game object
 		if (Health <= 0)
 		{
-			GameManager.Instance.DeregisterEnemy();
+			GameController.Instance.DeregisterEnemy();
 
 			// GameObject is a class (ie. variable type)
 			// gameObject (lower case g) is a variable that refers to ourselves

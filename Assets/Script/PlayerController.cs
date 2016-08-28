@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour {
 			Rigidbody ProjectileRB = projectileInstance.GetComponent<Rigidbody> ();
 
 			// launch the projectile
-			ProjectileRB.AddForce (transform.position - transform.forward * projectileSpeed * Time.deltaTime);
+			ProjectileRB.AddForce (transform.position + transform.forward * projectileSpeed * Time.deltaTime);
 
 			// play the sound
 			//*SoundManager.Instance.OnFireProjectile ();*

@@ -7,6 +7,31 @@ public class GameController : MonoBehaviour {
 
 	public GameObject player;
 
+	public static GameController Instance;
+
+	void Awake()
+	{
+		Instance = this;
+	}
+
+	// End of block to make this a singleton
+	// ------------------------------------------------------------------------
+
+	private int NumEnemiesActive = 0;
+
+	public void RegisterEnemy()
+	{
+		NumEnemiesActive += 1;
+		UIController.Instance.SetNumberOfEnemies(NumEnemiesActive);
+	}
+
+	public void DeregisterEnemy()
+	{
+		NumEnemiesActive -= 1;
+		UIController.Instance.SetNumberOfEnemies(NumEnemiesActive);
+	}
+
+
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -27,6 +52,6 @@ public class GameController : MonoBehaviour {
 	public void LoadScene (){
 
 		Application.LoadLevel ("GameLevel");
-
 	}
+
 }
